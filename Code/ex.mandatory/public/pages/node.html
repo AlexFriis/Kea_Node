@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Node
+      </h1>
+    </div>
+    </section>
+<section class="section has-background-light">
+    <h2 class="subtitle">
+        What is node and how do we use it?
+    </h2>
+    <div class="columns">
+        <div class="column is-half">
+            <div class="block">
+                <p>
+                    Node.js is an asynchronous event-driven JavaScript runtime, which is designed to build scalable network applications.
+                    <br> 
+                    This can be done with various frameworks and in this project Express has been used.
+                    <br>
+                    <br>
+                    <br>
+                    Assuming we start out with an empty project we first create a file called app.js
+                    <br>
+                    In this file we specify configurations for the application.
+                    <br>
+                    This could be to initialize express, define serverport or create our endpoints.
+                    <br>
+                    <br>
+                    To run a node application open a terminal of choice and enter the following: node applicationName.js
+
+                </p>
+
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="block">
+              <pre><code>
+                  //Example of Express from expressjs.com
+                  //Initialize express in our app
+                const express = require('express');
+                const app = express();
+                //Define port we want to run the application on
+                const port = 3000;
+                
+                
+                app.get('/', (req, res) => {
+                  res.send('Hello World!')
+                })
+                
+                //Start the server on specified port, console log the port number
+                app.listen(port, () => {
+                  console.log(`Example app listening on port ${port}`)
+                })
+              </code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <h2 class="subtitle">
+        Nodemon
+    </h2>
+    <div class="columns">
+        <div class="column is-half">
+            <div class="block">
+                <p>
+                    Nodemon is a tool only used in production.
+                    <br>
+                    Many IDE's allow users the functionality of reloading your application as changes are made.
+                    <br>
+                    This functionality also exists for node, in the form of nodemon.
+                    <br>
+                    Nodemon wraps the node app, watches the filesystem and automatically restarts the process.
+                    <br>
+                    It's a critical tool used in development to save time by not having to input "node app.js" to run your application manually every time changes are made.
+                </p>
+
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="block">
+              <pre><code>
+                  //How to install nodemon
+
+                  //Can be installed through git clone or by using NPM.
+
+                  //-g installs nodemon globally
+                  npm install -g nodemon
+
+                  //--save-dev
+                  //With a local installation nodemon will not be available in the system path and therefore cant be used directly in the command line.
+                  //The local installation can be run by calling it from within an npm script
+                  npm install --save-dev nodemon
+
+                  //Start a nodemon app
+                  nodemon app.js
+              </code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section has-background-light">
+    <h2 class="subtitle">
+        Package.json
+    </h2>
+    <div class="columns">
+        <div class="column is-half">
+            <div class="block">
+                <p>
+                    Diving further into node and its uses we'll take a look at the package.json file.
+                    <br>
+                    package.json is the center of a node project. It records important metadata about a project which is required before publishing to npm.
+                    <br>
+                    It also defines functional attributes of a project that npm uses to install dependencies, run scripts and identify the entrypoint to the package.
+                    <br>
+                    <br>
+                    Dependencies are best managed using npm commands such as <strong>npm install</strong>, <strong>npm uninstall</strong> and <strong>npm update</strong> to keep the node_modules in sync.
+                    <br>
+                    By manually adding dependencies without using terminal commands we still have to run npm install before the dependency is actually added to the project.
+                </p>
+
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="block">
+              <pre><code>
+                  //Package.json for this project
+
+                  //dependencies are written in json format.
+
+                  {
+                    "dependencies": {
+                        "express": "4.17.2"
+                    }
+                }
+              </code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

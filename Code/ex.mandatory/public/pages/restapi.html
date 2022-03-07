@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Rest API
+      </h1>
+    </div>
+    </section>
+<section class="section has-background-light">
+    <h2 class="subtitle">
+        REST
+    </h2>
+    <div class="columns">
+        <div class="column is-half">
+            <div class="block">
+                <p>
+                    Important to note that REST is a set of architectural constraints and not a protocol or a standard.
+                    <br>
+                    These constraints secure a better overview, better maintainabilily and longevity.
+                    <br>
+                    However there are still conventions and principles we have to follow.
+                    <br>
+                    
+                </p>
+
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="block">
+                <p>
+                In order for an API to be considered restful it has to conform to these criteria:
+                <br>
+                A client-server architecture made up of clients and servers, with requests managed through HTTP.
+                <br>
+                A uniform interface been components so that information is transferred in a standard form.
+                <br>
+                A client-server design pattern that enforces the seperation of concerns. To help client and server evolve independently.
+                <br>
+                Stateless - Which mandates that each request from the client to the server must contain all necessary information to complete requests.
+                <br>
+                Cacheable - requires that a response should be implicitly or explicitly label itself as either cacheable or non-cacheable.
+                <br>
+                A layered system that allows an architecture to be composed of hierachical layers by constraining component behaviour.
+                <br>
+                Code on demand (Optional) - Which allows client functionality to extend by downloading or executing code in the form of applets or scripts.
+
+            </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section has-background-light">
+    <h2 class="subtitle">
+        Naming Conventions
+    </h2>
+    <div class="columns">
+        <div class="column is-half">
+            <div class="block">
+                <p>
+                    In REST all primary data representation is called a resource. Having a consistent naming strategy is one of the best design decisions in the long term.
+                    <br>
+                    the RESTful URI should refer to a resource that is a thing rather than an action - therefore we use <strong>nouns</strong>.
+                    <br>
+                    The document resource is a singular concept therefore we apply the same principle and denote document resources as <strong>singular</strong>.
+                    <br>
+                    We use the <strong>plural</strong> name when denoting the collection resource archetype.
+                    <br>
+                    A store is a client-managed resource collection therefore we use <strong>plural</strong> to denote the store resource archetype.
+                    <br>
+                    As controller resources are actions we use <strong>verbs</strong> when naming them - ../playlist/play.
+                    <br>
+                    Consistency is key - keeping maintainability and readability in focus.
+                    <br>
+                    
+                </p>
+
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="block">
+              Few examples:
+              <br>
+
+              REQUEST - Endpoint - action
+              <br>
+              GET - /movies - Retrieves all Movies
+              <br>
+              GET - /movies/{id} - Retrieves a single resources by respective ID
+              <br>
+              POST - /movies - Creates a new resource
+              <br>
+              PUT - /movies/{id} - Updates an existing resource by ID
+              <br>
+              DELETE - /movies/{id} - Deletes an existing resources by ID
+              <br>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

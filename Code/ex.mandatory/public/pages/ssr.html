@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Server-Side Rendering
+      </h1>
+    </div>
+    </section>
+<section class="section has-background-light">
+    <h2 class="subtitle">
+        Definitions and benefits of SSR
+    </h2>
+    <div class="columns">
+        <div class="column is-half">
+            <div class="block">
+                <p>
+                    Server-side rendering is the ability of an application to display webpages on the server instead of rendering it in the browser.
+                    <br>
+                    <strong>Advantages:</strong>
+                    <br>
+                    SSR enables faster loading and betters the user experience.
+                    <br>
+                    Plays a role in SEO as search engines favor pages with faster loading times.
+                    <br>
+                    Assists with loading for users with slower internet connections.
+                    <br>
+                    Assist with loading for users with outdated devices.
+                    <br>
+                    <strong>Disadvantages:</strong>
+                    <br>
+                    Slower page transitions.
+                    <br>
+                    Bigger surface area - more vulnerable.
+                    <br>
+                    Responsetime dependant on trafict - The more trafic the slower the response.
+                    <br>
+                    Can be timeconsuming to render bigger applications.
+                </p>
+
+            </div>
+        </div>
+        
+    </div>
+</section>
+<section class="section">
+    <h2 class="subtitle">
+        How SSR was used to build this project.
+    </h2>
+    <div class="columns">
+        <div class="column is-half">
+            <div class="block">
+                <p>
+                   This project was developed based on the requirements of the mandatory assignment which include using SSR and using Express to serve the pages.
+                   <br>
+                   Express was imported to this project by including it as a dependency in the package.json file.
+                   <br>
+                   Then we install our depencies with the following command: npm install.
+                </p>
+
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="block">
+              <pre><code>
+                  //Example of how pages are served
+
+                  //Specifies which directory express should use to serve static assets
+                  app.use(express.static("public"));
+
+
+                    const fs = require("fs");
+
+                    //Stringifies content
+                    const nav = fs.readFileSync("./public/components/nav.html").toString();
+
+                    const homepage = fs.readFileSync("./public/pages/home.html").toString();
+
+
+                    //Serve the pages to the server
+                    app.get("/", (req, res) => {
+                        res.send(homeDisp);
+                    });
+              </code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Javascript
+            </h1>
+        </div>
+    </section>
+    <section class="section has-background-light">
+        <h2 class="subtitle">
+            Javascript Variables
+        </h2>
+        
+        
+        <div class="columns">
+            <div class="column is-half">
+                <div class="block">
+                    <p>
+                        
+                        <br>
+                        Variables defined with <strong>let</strong> cannot be redeclared.
+                        <br>
+                        Variables defined with <strong>let</strong> must be declared before use.
+                        <br>
+                        Variables defined with <strong>let</strong> have block scope.
+                        <br>
+                        <br>
+                        Variables defined with <strong>const</strong> cannot be redeclared.
+                        <br>
+                        Variables defined with <strong>const</strong> cannot be reassigned.
+                        <br>
+                        Variables defined with <strong>const</strong> have block scope.
+                        <br>
+                        <br>
+                        In practice we strive to use <strong>const</strong> and <strong>let</strong> instead of <strong>var</strong> as they are limited to the scope whereas var declares a variable globally regardless of scope.
+                        <br>
+                        <br>
+                        Hoisting is JavaScript's default behaviour of moving all declarations to the top of the current script or function.
+                        <br>
+                        This allows us to declare variables after they've been used.
+                        <br>
+                        Which can also be turned around to - A variable can be used before it has been declared.
+                    </p>
+                </div>
+            </div>
+            <div class="column is-half">
+                <div class="block">
+                    <p>In JavaScript we can declare variables in 4 different ways:</p>
+                    <pre><code>
+                        //By using var
+                        var variable;
+                        //By using let
+                        let variable;
+                        //By using const
+                        const variable;
+                        //By using nothing
+                        x = 5;
+                        
+                        let x = 4;
+                        let x = "String";
+                        //SyntaxError
+                        
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <h2 class="subtitle">
+            Callbacks
+        </h2>
+        <div class="columns">
+            <div class="column is-half">
+                <div class="block">
+                    <p>
+                        Callback functions can be used to pass an argument to another function.
+                        <br>
+                        Allows a function to call another function.
+                        <br>
+                        Callback functions can also run subsequently as other functions finish.
+                        <br>
+                        Callback functions has various functionality but really shines when used asynchronous where one function has to wait for another.
+                    </p>
+                    
+                </div>
+            </div>
+            <div class="column is-half">
+                <div class="block">
+                    <pre><code>
+                        //Callback example
+                        
+                        function displayThis(somethingToDisplay) {
+                            document.getElementById("idTag").innerHTML = somethingToDisplay;
+                        }
+                        
+                        function myCalc(num1, num2, myCallback) {
+                            let sum = num1 + num2;
+                            myCallback(sum);
+                        }
+                        
+                        myCalc(5, 5, displayThis);
+                        
+                        //In this example displayThis is the name of the function which we pass to myCalc() as an argument.
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section has-background-light">
+        <h2 class="subtitle">
+            Datatypes
+        </h2>
+        <div class="columns">
+            <div class="column is-half">
+                <div class="block">
+                    <p>
+                        In programming the concept of datatypes is extremely important.
+                        <br>
+                        Without datatypes the compiler wouldn't know how to differentiate strings, ints and booleans which would most likely ruin all functionality.
+                    </p>
+                    
+                </div>
+            </div>
+            <div class="column is-half">
+                <div class="block">
+                    <pre><code>
+                        //Examples:
+                        
+                        //String:
+                        let name = "Jane";
+                        
+                        //Integer
+                        let number = "15";
+                        
+                        //boolean
+                        let bool = true;
+                        
+                        //Array
+                        let names = ["Morten", "Peter"];
+                        
+                        //Object
+                        let city = {
+                            name: "Copenhagen",
+                            population = 600000
+                        };
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <h2 class="subtitle">
+            Arrays
+        </h2>
+        <div class="columns">
+            <div class="column is-half">
+                <div class="block">
+                    <p>
+                        Arrays are special variables which can hold more than one value.
+                        <br>
+                        Generally used when we have a list of items which we can store under a single variable instead of listing them seperately.
+                    </p>
+                    
+                </div>
+            </div>
+            <div class="column is-half">
+                <div class="block">
+                    <pre><code>
+                        //Array Example
+                        
+                        const juicearray = ["Apple", "Orange", "Multifruit"]
+                        
+                        //Array has a multitude of functionality - A few examples
+                        
+                        //.pop() removes the last element of the array which would be "Multifruit"
+                        juicearray.pop();
+                        
+                        //.push() adds a new element to the end of the array
+                        juicearray.push("Melon");
+                        //Which would add melon to the juicearray.
+                        
+                        //Array delete()
+                        delete juicearray[0];
+                        //Removes the value at index 0 - However using delete() leaves undefined holes in the array which makes other methods prefered such as .pop().
+                        
+                        
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="section has-background-light">
+    <h2 class="subtitle">
+        Loops
+    </h2>
+    <div class="columns">
+        <div class="column is-half">
+            <div class="block">
+                <p>
+                    Loops can be used to execute a block of code numerous times which has many purposes.
+                    <br>
+                    An example of this could be to iterate through an array and return the specific value.
+                    <br>
+                    As with other code, there are various ways to write it, some approaches are prefered.
+                </p>
+                
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="block">
+                <pre><code>
+                    //Loop example
+                    
+                    const cars = ["Fiat", "Opel", "Ford"];
+                    
+                    for (let i = 0; i < cars.length; i++) {
+                        console.log(cars[i]);
+                    }
+                    
+                    //To make this safer, readable and remove potential side-effects we can take another approach.
+                    
+                    //Another approach
+                    const cars = ["Fiat", "Opel", "Ford"];
+                    
+                    cars.forEach(element => console.log(element));
+                </code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <h2 class="subtitle">
+        Fetch
+    </h2>
+    <div class="columns">
+        <div class="column is-half">
+            <div class="block">
+                <p>
+                    When building web applications, medias etc. we can use Fetch to make HTTP requests serverside and clientside.
+                    <br>
+                    This project was made in node with express.
+                </p>
+                
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="block">
+                <pre><code>
+                    //A simple fetch example
+                    
+                    fetch('URL')
+                    .then(res => res.text())
+                    .then(text => console.log(text));
+                    
+                    //In this example we fetch an URL and add multiple promises which are to be executed once we receive a response.
+                    //In this case we await the response on the URL and convert it to text format.
+                    //Hereafter we print the text with console.log().
+                </code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
